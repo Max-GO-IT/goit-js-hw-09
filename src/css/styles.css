@@ -7,6 +7,8 @@
 @import url('./reset.css');
 @import url('./vite-promo.css');
 @import url('./header.css');
+@import url('./1-gallery.css');
+
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -24,25 +26,3 @@
   -webkit-text-size-adjust: 100%;
 }
 
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  width: 1440px;
-  height: 848px;  
-  padding: 100px 156px 100px 156px;   
-}
-
-.gallery-item {
-list-style: none;
-margin-right: 24px;
-margin-bottom: 48px; 
-}
-.gallery-item:last-child {
-  margin-right: 0px;
-}
-
-.gallery-image {
-width: 360px;
-height: 300px;
-
-}
