@@ -74,17 +74,23 @@ const images = [
 
 const gallery = document.querySelector(".gallery");
 const markup = images.map((image) => `<li class="gallery-item">
-<a class="gallery-link" href="#">
+<a class="gallery-link" href="${image.original}">
   <img
     class="gallery-image"
     src="${image.preview}"
-    data-source="${image.original}"
     alt="${image.description}"
   />
 </a>
 </li>`).join("");
 gallery.innerHTML = markup;
 
+// Инициализируйте SimpleLightbox *после* создания галереи
+const lightbox = new SimpleLightbox('.gallery-link', {
+  captionDelay: 250,
+  captionPosition: 'bottom',
+  captionType: 'attr',
+  captionsData: 'alt',
+});
 
 
 
@@ -92,14 +98,19 @@ gallery.innerHTML = markup;
 gallery.addEventListener("click", (event) => {
   if (event.target.classList.contains("gallery-image")) {
     const largeImageLink = event.target.dataset.source;
-    const instance = SimpleLightbox.show({
-      items: [
-        {
-          src: largeImageLink,
-          width: 800,
-          height: 600,
-        },
-      ],
-    });
+    
+
+    console.log('Ссылка на большое изображение:', largeImageLink);
+    //const instance1 = basicLightbox.create(`<img src="${largeImageLink}" width="800" height="600">`)
+    //instance1.show()
+    //------------------------------------------------------------------------------//
+    
+    //  Показать lightbox при загрузке страницы
+   
+
+
+
+    //-------------------------------------------------------------------------------//    
+
   }
 });
